@@ -1,0 +1,96 @@
+{
+  "name": "@miinded/nestjs-auth-jwt",
+  "version": "1.0.0",
+  "description": "Production-ready NestJS module for JWT authentication with passport integration. Features access tokens, refresh tokens, and full TypeScript support.",
+  "license": "MIT",
+  "author": "Miinded",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miinded/nestjs-auth.git",
+    "directory": "packages/nestjs-auth-jwt"
+  },
+  "bugs": {
+    "url": "https://github.com/miinded/nestjs-auth/issues"
+  },
+  "homepage": "https://github.com/miinded/nestjs-auth/tree/main/packages/nestjs-auth-jwt",
+  "keywords": [
+    "nestjs",
+    "nest",
+    "jwt",
+    "authentication",
+    "passport",
+    "refresh-token",
+    "typescript"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/cjs/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/cjs/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js",
+      "default": "./dist/cjs/index.js"
+    }
+  },
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "prebuild": "pnpm clean",
+    "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
+    "format": "prettier --write \"{src,test}/**/*.ts\"",
+    "lint": "eslint \"{src,test}/**/*.ts\"",
+    "lint:fix": "eslint \"{src,test}/**/*.ts\" --fix",
+    "test": "pnpm test:unit",
+    "test:unit": "node ../../config/run-jest.mjs unit",
+    "test:unit:debug": "node ../../config/run-jest.mjs unit:debug",
+    "test:watch": "node ../../config/run-jest.mjs watch",
+    "test:coverage": "node ../../config/run-jest.mjs coverage"
+  },
+  "dependencies": {
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/passport": "^11.0.0",
+    "bcrypt": "^5.1.1",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.3.0 || ^11.0.0",
+    "@nestjs/core": "^10.3.0 || ^11.0.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@swc/core": "catalog:",
+    "@swc/jest": "catalog:",
+    "@nestjs/common": "catalog:",
+    "@nestjs/core": "catalog:",
+    "@nestjs/platform-express": "catalog:",
+    "@nestjs/testing": "catalog:",
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "catalog:",
+    "@types/jest": "catalog:",
+    "@types/node": "catalog:",
+    "@types/passport": "^1.0.17",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/passport-strategy": "^0.2.38",
+    "@typescript-eslint/eslint-plugin": "catalog:",
+    "@typescript-eslint/parser": "catalog:",
+    "eslint": "catalog:",
+    "eslint-config-prettier": "catalog:",
+    "jest": "catalog:",
+    "prettier": "catalog:",
+    "rimraf": "catalog:",
+    "rxjs": "catalog:",
+    "ts-node": "catalog:",
+    "typescript": "catalog:"
+  }
+}
