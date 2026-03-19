@@ -50,9 +50,7 @@ describe('AuthJwtModule', () => {
       };
 
       const module = AuthJwtModule.registerAsync(config);
-      const jwtStrategyProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === JwtStrategy,
-      );
+      const jwtStrategyProvider = module.providers?.find((p) => 'provide' in p && p.provide === JwtStrategy);
 
       expect(jwtStrategyProvider).toBeDefined();
     });
@@ -84,9 +82,7 @@ describe('AuthJwtModule', () => {
       };
 
       const module = AuthJwtModule.registerAsync(config);
-      const configProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === JWT_MODULE_OPTIONS,
-      );
+      const configProvider = module.providers?.find((p) => 'provide' in p && p.provide === JWT_MODULE_OPTIONS);
 
       expect(configProvider).toBeDefined();
     });
@@ -101,9 +97,7 @@ describe('AuthJwtModule', () => {
       };
 
       const module = AuthJwtModule.registerAsync(config);
-      const userServiceProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === JWT_USER_SERVICE,
-      );
+      const userServiceProvider = module.providers?.find((p) => 'provide' in p && p.provide === JWT_USER_SERVICE);
 
       expect(userServiceProvider).toBeDefined();
     });

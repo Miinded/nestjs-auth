@@ -59,14 +59,14 @@ describe('PassportAuthApiKeyStrategy', () => {
       const user = { id: 1, name: 'test' };
       mockUserService.getOneUserByApiKey.mockResolvedValue(user);
       strategy.authenticate(mockReq);
-      await new Promise(resolve => setTimeout(resolve, 10));
+      await new Promise((resolve) => setTimeout(resolve, 10));
       expect((strategy as any).success).toHaveBeenCalledWith(expect.objectContaining({ id: 1 }));
     });
 
     it('should call fail with 400 on TypeError', async () => {
       mockUserService.getOneUserByApiKey.mockRejectedValue(new TypeError('Test error'));
       strategy.authenticate(mockReq);
-      await new Promise(resolve => setTimeout(resolve, 10));
+      await new Promise((resolve) => setTimeout(resolve, 10));
       expect((strategy as any).fail).toHaveBeenCalled();
     });
 
@@ -74,14 +74,14 @@ describe('PassportAuthApiKeyStrategy', () => {
       const error = { response: { statusCode: 401, message: 'Unauthorized' } };
       mockUserService.getOneUserByApiKey.mockRejectedValue(error);
       strategy.authenticate(mockReq);
-      await new Promise(resolve => setTimeout(resolve, 10));
+      await new Promise((resolve) => setTimeout(resolve, 10));
       expect((strategy as any).fail).toHaveBeenCalled();
     });
 
     it('should call fail with 400 on unknown error', async () => {
       mockUserService.getOneUserByApiKey.mockRejectedValue(new Error('Unknown error'));
       strategy.authenticate(mockReq);
-      await new Promise(resolve => setTimeout(resolve, 10));
+      await new Promise((resolve) => setTimeout(resolve, 10));
       expect((strategy as any).fail).toHaveBeenCalled();
     });
   });

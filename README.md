@@ -30,10 +30,10 @@ A collection of production-ready NestJS authentication modules with Passport int
 
 ## Packages
 
-| Package | Description |
-| ------- | ----------- |
-| [`@miinded/nestjs-auth-jwt`](./packages/nestjs-auth-jwt) | JWT authentication with access + refresh tokens via Passport |
-| [`@miinded/nestjs-auth-api-keys`](./packages/nestjs-auth-api-keys) | API key authentication via Passport header strategy |
+| Package                                                            | Description                                                  |
+| ------------------------------------------------------------------ | ------------------------------------------------------------ |
+| [`@miinded/nestjs-auth-jwt`](./packages/nestjs-auth-jwt)           | JWT authentication with access + refresh tokens via Passport |
+| [`@miinded/nestjs-auth-api-keys`](./packages/nestjs-auth-api-keys) | API key authentication via Passport header strategy          |
 
 ## Installation
 
@@ -204,21 +204,21 @@ export class DataController {
 
 ### `AuthJwtModule.registerAsync(options)`
 
-| Option | Type | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| `userService` | `Type<IJwtAuth>` | ✅ | Class implementing `IJwtAuth` |
-| `useFactory` | `(...args) => JWTConfig` | ❌ | Factory returning JWT config |
-| `inject` | `any[]` | ❌ | Dependencies to inject into factory |
-| `imports` | `Module[]` | ❌ | Modules to import |
+| Option        | Type                     | Required | Description                         |
+| ------------- | ------------------------ | -------- | ----------------------------------- |
+| `userService` | `Type<IJwtAuth>`         | ✅       | Class implementing `IJwtAuth`       |
+| `useFactory`  | `(...args) => JWTConfig` | ❌       | Factory returning JWT config        |
+| `inject`      | `any[]`                  | ❌       | Dependencies to inject into factory |
+| `imports`     | `Module[]`               | ❌       | Modules to import                   |
 
 ### `AuthApiKeysModule.registerAsync(options)`
 
-| Option | Type | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| `userService` | `Type<IApiKeyUser>` | ✅ | Class implementing `IApiKeyUser` |
-| `useFactory` | `(...args) => ApiKeysConfig` | ❌ | Factory returning API key config |
-| `inject` | `any[]` | ❌ | Dependencies to inject into factory |
-| `imports` | `Module[]` | ❌ | Modules to import |
+| Option        | Type                         | Required | Description                         |
+| ------------- | ---------------------------- | -------- | ----------------------------------- |
+| `userService` | `Type<IApiKeyUser>`          | ✅       | Class implementing `IApiKeyUser`    |
+| `useFactory`  | `(...args) => ApiKeysConfig` | ❌       | Factory returning API key config    |
+| `inject`      | `any[]`                      | ❌       | Dependencies to inject into factory |
+| `imports`     | `Module[]`                   | ❌       | Modules to import                   |
 
 ## Development
 

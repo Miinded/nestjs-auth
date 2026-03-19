@@ -24,7 +24,7 @@ class TestController {
 
 @Injectable()
 class MyW implements IAuthApiKeys {
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService) {}
 
   async getOneUserByApiKey(apiKey: string): Promise<unknown> {
     const apiKeys: string[] = this.configService

@@ -1,4 +1,13 @@
-import { Controller, Get, INestApplication, Module, Injectable, Request, MiddlewareConsumer, Post } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  INestApplication,
+  Module,
+  Injectable,
+  Request,
+  MiddlewareConsumer,
+  Post,
+} from '@nestjs/common';
 import { Test } from '@nestjs/testing';
 import request from 'supertest';
 import { AuthJwtModule, JWTConfig } from './auth-jwt.module';
@@ -36,7 +45,7 @@ class MyUserService implements IJwtAuth {
     private config: JWTConfig,
     private jwtService: JwtService,
     private cacheManager: CacheManagerMock,
-  ) { }
+  ) {}
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   async getOneUserByUserId(userId: string): Promise<unknown> {
@@ -83,7 +92,7 @@ class MyUserService implements IJwtAuth {
 
 @Controller()
 class TestController {
-  constructor(private userService: MyUserService) { }
+  constructor(private userService: MyUserService) {}
 
   @Get('testa')
   // eslint-disable-next-line @typescript-eslint/no-unused-vars

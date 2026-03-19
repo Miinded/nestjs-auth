@@ -48,9 +48,7 @@ describe('AuthApiKeysModule', () => {
       };
 
       const module = AuthApiKeysModule.registerAsync(config);
-      const optionsProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === API_KEYS_MODULE_OPTIONS,
-      );
+      const optionsProvider = module.providers?.find((p) => 'provide' in p && p.provide === API_KEYS_MODULE_OPTIONS);
 
       expect(optionsProvider).toBeDefined();
     });
@@ -62,9 +60,7 @@ describe('AuthApiKeysModule', () => {
       };
 
       const module = AuthApiKeysModule.registerAsync(config);
-      const userServiceProvider = module.providers?.find(
-        (p) => 'provide' in p && p.provide === API_KEYS_USER_SERVICE,
-      );
+      const userServiceProvider = module.providers?.find((p) => 'provide' in p && p.provide === API_KEYS_USER_SERVICE);
 
       expect(userServiceProvider).toBeDefined();
     });

@@ -138,45 +138,45 @@ export class UserService implements IJwtAuth {
 
 ### `AuthJwtModule.registerAsync(options)`
 
-| Option | Type | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| `userService` | `Type<IJwtAuth>` | ✅ | Class implementing `IJwtAuth` |
-| `useFactory` | `(...args) => JWTConfig` | ❌ | Factory returning JWT config |
-| `inject` | `any[]` | ❌ | Dependencies to inject into factory |
-| `imports` | `Module[]` | ❌ | Modules to import |
+| Option        | Type                     | Required | Description                         |
+| ------------- | ------------------------ | -------- | ----------------------------------- |
+| `userService` | `Type<IJwtAuth>`         | ✅       | Class implementing `IJwtAuth`       |
+| `useFactory`  | `(...args) => JWTConfig` | ❌       | Factory returning JWT config        |
+| `inject`      | `any[]`                  | ❌       | Dependencies to inject into factory |
+| `imports`     | `Module[]`               | ❌       | Modules to import                   |
 
 ### `JWTConfig`
 
-| Option | Type | Description |
-| ------ | ---- | ----------- |
-| `token` | `JwtModuleOptions` | Access token config (`secret`, `signOptions.expiresIn`…) |
+| Option         | Type               | Description                                               |
+| -------------- | ------------------ | --------------------------------------------------------- |
+| `token`        | `JwtModuleOptions` | Access token config (`secret`, `signOptions.expiresIn`…)  |
 | `refreshToken` | `JwtModuleOptions` | Refresh token config (`secret`, `signOptions.expiresIn`…) |
 
 > If `token.signOptions.expiresIn` is not set, it defaults to `5m`.
 
 ### `IJwtAuth` interface
 
-| Method | Signature | Description |
-| ------ | --------- | ----------- |
-| `getOneUserByJwt` | `(payload: JwtPayload) => Promise<unknown>` | Resolve user from access token payload |
+| Method                     | Signature                                   | Description                             |
+| -------------------------- | ------------------------------------------- | --------------------------------------- |
+| `getOneUserByJwt`          | `(payload: JwtPayload) => Promise<unknown>` | Resolve user from access token payload  |
 | `getOneUserByRefreshToken` | `(payload: JwtPayload) => Promise<unknown>` | Resolve user from refresh token payload |
 
 ### Exports
 
-| Symbol | Description |
-| ------ | ----------- |
-| `AuthJwtModule` | Main module |
-| `JwtMiddleware` | Middleware for JWT authentication |
-| `JwtRefreshTokenGuard` | Guard for refresh token routes |
-| `JwtStrategy` | Passport JWT access token strategy |
-| `JwtRefreshTokenStrategy` | Passport refresh token strategy |
-| `IJwtAuth` | Interface to implement in your user service |
-| `JwtService` | Re-exported from `@nestjs/jwt` |
-| `PassportModule` | Re-exported from `@nestjs/passport` |
-| `AuthGuard` | Re-exported from `@nestjs/passport` |
-| `PassportStrategy` | Re-exported from `@nestjs/passport` |
-| `JWT_USER_SERVICE` | Injection token for user service |
-| `JWT_MODULE_OPTIONS` | Injection token for module options |
+| Symbol                    | Description                                 |
+| ------------------------- | ------------------------------------------- |
+| `AuthJwtModule`           | Main module                                 |
+| `JwtMiddleware`           | Middleware for JWT authentication           |
+| `JwtRefreshTokenGuard`    | Guard for refresh token routes              |
+| `JwtStrategy`             | Passport JWT access token strategy          |
+| `JwtRefreshTokenStrategy` | Passport refresh token strategy             |
+| `IJwtAuth`                | Interface to implement in your user service |
+| `JwtService`              | Re-exported from `@nestjs/jwt`              |
+| `PassportModule`          | Re-exported from `@nestjs/passport`         |
+| `AuthGuard`               | Re-exported from `@nestjs/passport`         |
+| `PassportStrategy`        | Re-exported from `@nestjs/passport`         |
+| `JWT_USER_SERVICE`        | Injection token for user service            |
+| `JWT_MODULE_OPTIONS`      | Injection token for module options          |
 
 ## License
 

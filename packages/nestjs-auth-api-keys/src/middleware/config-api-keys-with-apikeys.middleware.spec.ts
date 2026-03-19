@@ -24,7 +24,7 @@ class TestController {
 
 @Injectable()
 class MyW implements IAuthApiKeys {
-  constructor(private configService: ConfigService) { }
+  constructor(private configService: ConfigService) {}
 
   async getOneUserByApiKey(apiKey: string): Promise<unknown> {
     const apiKeys: string[] = this.configService
@@ -87,15 +87,26 @@ describe('ConfigApiKeysMiddleware with define API keys', () => {
   });
 
   it(`with valid api key`, async () => {
-    await request(server).get('/testa').set('Accept', 'application/json').set('x-api-key', 'apiKey1').expect(200, RETURN_VALUE);
+    await request(server)
+      .get('/testa')
+      .set('Accept', 'application/json')
+      .set('x-api-key', 'apiKey1')
+      .expect(200, RETURN_VALUE);
   });
 
   it(`with invalid api key`, async () => {
-    await request(server).get('/testa').set('Accept', 'application/json').set('x-api-key', 'apiKey_NonExist').expect(401, { statusCode: 401, message: 'Unauthorized' });
+    await request(server)
+      .get('/testa')
+      .set('Accept', 'application/json')
+      .set('x-api-key', 'apiKey_NonExist')
+      .expect(401, { statusCode: 401, message: 'Unauthorized' });
   });
 
   it(`without api key`, async () => {
-    await request(server).get('/testa').set('Accept', 'application/json').expect(401, { statusCode: 401, message: 'Unauthorized' });
+    await request(server)
+      .get('/testa')
+      .set('Accept', 'application/json')
+      .expect(401, { statusCode: 401, message: 'Unauthorized' });
   });
 
   afterAll(async () => {

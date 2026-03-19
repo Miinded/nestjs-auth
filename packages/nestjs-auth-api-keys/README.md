@@ -120,36 +120,36 @@ export class ApiKeyService implements IAuthApiKeys {
 
 ### `AuthApiKeysModule.registerAsync(options)`
 
-| Option | Type | Required | Description |
-| ------ | ---- | -------- | ----------- |
-| `userService` | `Type<IAuthApiKeys>` | ✅ | Class implementing `IAuthApiKeys` |
-| `useFactory` | `(...args) => ApiKeysConfig` | ❌ | Factory returning API key config |
-| `inject` | `any[]` | ❌ | Dependencies to inject into factory |
-| `imports` | `Module[]` | ❌ | Modules to import |
+| Option        | Type                         | Required | Description                         |
+| ------------- | ---------------------------- | -------- | ----------------------------------- |
+| `userService` | `Type<IAuthApiKeys>`         | ✅       | Class implementing `IAuthApiKeys`   |
+| `useFactory`  | `(...args) => ApiKeysConfig` | ❌       | Factory returning API key config    |
+| `inject`      | `any[]`                      | ❌       | Dependencies to inject into factory |
+| `imports`     | `Module[]`                   | ❌       | Modules to import                   |
 
 ### `ApiKeysConfig`
 
-| Option | Type | Default | Description |
-| ------ | ---- | ------- | ----------- |
+| Option      | Type     | Default     | Description                           |
+| ----------- | -------- | ----------- | ------------------------------------- |
 | `headerKey` | `string` | `x-api-key` | HTTP header name carrying the API key |
 
 ### `IAuthApiKeys` interface
 
-| Method | Signature | Description |
-| ------ | --------- | ----------- |
+| Method               | Signature                              | Description                                                              |
+| -------------------- | -------------------------------------- | ------------------------------------------------------------------------ |
 | `getOneUserByApiKey` | `(apiKey: string) => Promise<unknown>` | Resolve user from an API key — return `null`/`undefined`/`false` to deny |
 
 ### Exports
 
-| Symbol | Description |
-| ------ | ----------- |
-| `AuthApiKeysModule` | Main module |
-| `ApiKeysAuthGuard` | Passport guard for route protection |
-| `ConfigApiKeysMiddleware` | Middleware alternative to the guard |
-| `InjectApiKeyUser` | Parameter decorator to inject the user service |
-| `IAuthApiKeys` | Interface to implement in your user service |
-| `API_KEYS_USER_SERVICE` | Injection token for user service |
-| `API_KEYS_MODULE_OPTIONS` | Injection token for module options |
+| Symbol                    | Description                                    |
+| ------------------------- | ---------------------------------------------- |
+| `AuthApiKeysModule`       | Main module                                    |
+| `ApiKeysAuthGuard`        | Passport guard for route protection            |
+| `ConfigApiKeysMiddleware` | Middleware alternative to the guard            |
+| `InjectApiKeyUser`        | Parameter decorator to inject the user service |
+| `IAuthApiKeys`            | Interface to implement in your user service    |
+| `API_KEYS_USER_SERVICE`   | Injection token for user service               |
+| `API_KEYS_MODULE_OPTIONS` | Injection token for module options             |
 
 ## License
 

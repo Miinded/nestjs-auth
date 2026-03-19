@@ -27,7 +27,7 @@ export class AuthJwtModule {
     const providers: Provider[] = [
       {
         provide: JWT_MODULE_OPTIONS,
-        useFactory: options.useFactory ?? ((..._args: unknown[]) => ({} as JWTConfig)),
+        useFactory: options.useFactory ?? ((..._args: unknown[]) => ({}) as JWTConfig),
         inject: options.inject || [],
       },
       {
