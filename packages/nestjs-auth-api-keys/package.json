@@ -76,6 +76,7 @@
     "@nestjs/testing": "catalog:",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
+    "@types/express": "catalog:",
     "@types/passport": "^1.0.17",
     "@types/passport-strategy": "^0.2.38",
     "@typescript-eslint/eslint-plugin": "catalog:",
