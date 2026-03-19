@@ -21,6 +21,12 @@ catalogs:
     '@nestjs/core':
       specifier: ^11.1.13
       version: 11.1.17
+    '@nestjs/jwt':
+      specifier: ^11.0.0
+      version: 11.0.2
+    '@nestjs/passport':
+      specifier: ^11.0.0
+      version: 11.0.5
     '@nestjs/platform-express':
       specifier: ^11.1.13
       version: 11.1.17
@@ -136,9 +142,6 @@ importers:
 
   packages/nestjs-auth-api-keys:
     dependencies:
-      '@nestjs/passport':
-        specifier: ^11.0.0
-        version: 11.0.5(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
       passport:
         specifier: ^0.7.0
         version: 0.7.0
@@ -155,6 +158,9 @@ importers:
       '@nestjs/core':
         specifier: 'catalog:'
         version: 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.17)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/passport':
+        specifier: 'catalog:'
+        version: 11.0.5(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
       '@nestjs/testing':
         specifier: 'catalog:'
         version: 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)(@nestjs/platform-express@11.1.17)
@@ -209,12 +215,6 @@ importers:
 
   packages/nestjs-auth-jwt:
     dependencies:
-      '@nestjs/jwt':
-        specifier: ^11.0.0
-        version: 11.0.2(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))
-      '@nestjs/passport':
-        specifier: ^11.0.0
-        version: 11.0.5(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
       bcrypt:
         specifier: ^5.1.1
         version: 5.1.1
@@ -231,6 +231,12 @@ importers:
       '@nestjs/core':
         specifier: 'catalog:'
         version: 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/platform-express@11.1.17)(reflect-metadata@0.2.2)(rxjs@7.8.2)
+      '@nestjs/jwt':
+        specifier: 'catalog:'
+        version: 11.0.2(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))
+      '@nestjs/passport':
+        specifier: 'catalog:'
+        version: 11.0.5(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(passport@0.7.0)
       '@nestjs/platform-express':
         specifier: 'catalog:'
         version: 11.1.17(@nestjs/common@11.1.17(reflect-metadata@0.2.2)(rxjs@7.8.2))(@nestjs/core@11.1.17)
