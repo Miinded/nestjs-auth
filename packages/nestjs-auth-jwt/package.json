@@ -1,6 +1,6 @@
 {
   "name": "@miinded/nestjs-auth-jwt",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready NestJS module for JWT authentication with passport integration. Features access tokens, refresh tokens, and full TypeScript support.",
   "license": "MIT",
   "author": "Miinded",
