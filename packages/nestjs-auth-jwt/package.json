@@ -6,13 +6,13 @@
   "author": "Miinded",
   "repository": {
     "type": "git",
-    "url": "https://github.com/miinded/nestjs-auth.git",
+    "url": "https://github.com/Miinded/nestjs-auth.git",
     "directory": "packages/nestjs-auth-jwt"
   },
   "bugs": {
-    "url": "https://github.com/miinded/nestjs-auth/issues"
+    "url": "https://github.com/Miinded/nestjs-auth/issues"
   },
-  "homepage": "https://github.com/miinded/nestjs-auth/tree/main/packages/nestjs-auth-jwt",
+  "homepage": "https://github.com/Miinded/nestjs-auth/tree/main/packages/nestjs-auth-jwt",
   "keywords": [
     "nestjs",
     "nest",
