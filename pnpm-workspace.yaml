@@ -11,7 +11,7 @@ catalog:
   '@types/passport': ^1.0.17
   '@types/passport-jwt': ^4.0.1
   '@types/passport-strategy': ^0.2.38
-  '@types/bcrypt': ^5.0.2
+  '@types/bcrypt': ^6.0.0
   '@nestjs/common': ^11.1.13
   '@nestjs/core': ^11.1.13
   '@nestjs/platform-express': ^11.1.13
