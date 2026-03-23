@@ -1,6 +1,6 @@
 {
   "name": "@miinded/nestjs-auth-api-keys",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Production-ready NestJS module for API key authentication with Passport integration.",
   "license": "MIT",
   "author": "Miinded",
