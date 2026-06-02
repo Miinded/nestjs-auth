@@ -12,6 +12,8 @@ catalog:
   '@types/passport-jwt': ^4.0.1
   '@types/passport-strategy': ^0.2.38
   '@types/bcrypt': ^5.0.2
+  '@types/supertest': ^6.0.3
+  supertest: ^7.1.4
   '@nestjs/common': ^11.1.13
   '@nestjs/core': ^11.1.13
   '@nestjs/platform-express': ^11.1.13
@@ -41,3 +43,4 @@ ignoredBuiltDependencies:
 onlyBuiltDependencies:
   - '@swc/core'
   - unrs-resolver
+  - bcrypt

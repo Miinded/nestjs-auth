@@ -92,6 +92,8 @@
     "prettier": "catalog:",
     "rimraf": "catalog:",
     "rxjs": "catalog:",
+    "supertest": "catalog:",
+    "@types/supertest": "catalog:",
     "ts-node": "catalog:",
     "typescript": "catalog:"
   }

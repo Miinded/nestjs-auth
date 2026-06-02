@@ -24,12 +24,14 @@ export type JWTAsyncConfig = {
 @Module({})
 export class AuthJwtModule {
   static registerAsync(options: JWTAsyncConfig): DynamicModule {
+    const optionsProvider: Provider = {
+      provide: JWT_MODULE_OPTIONS,
+      useFactory: options.useFactory ?? ((..._args: unknown[]) => ({}) as JWTConfig),
+      inject: options.inject || [],
+    };
+
     const providers: Provider[] = [
-      {
-        provide: JWT_MODULE_OPTIONS,
-        useFactory: options.useFactory ?? ((..._args: unknown[]) => ({}) as JWTConfig),
-        inject: options.inject || [],
-      },
+      optionsProvider,
       {
         provide: JwtStrategy,
         useFactory: (config: JWTConfig, userService: IJwtAuth) => {
@@ -58,6 +60,7 @@ export class AuthJwtModule {
         PassportModule,
         JwtModule.registerAsync({
           global: true,
+          extraProviders: [optionsProvider],
           useFactory: (config: JWTConfig) => {
             if (!config.token.signOptions?.expiresIn) {
               if (!config.token.signOptions) {
@@ -72,7 +75,7 @@ export class AuthJwtModule {
       ],
       controllers: [AuthJwtController],
       providers,
-      exports: [...providers],
+      exports: [...providers, JwtModule],
     };
   }
 }
