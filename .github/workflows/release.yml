@@ -60,18 +60,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Download build artifact
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-24
-          path: dist/
-
-      - name: Download coverage artifact (optionnel)
-        uses: actions/download-artifact@v3
-        with:
-          name: coverage-24
-          path: coverage/
-
       - name: Quality gate
         run: pnpm ci:quality
 

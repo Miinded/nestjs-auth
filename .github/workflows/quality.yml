@@ -81,15 +81,3 @@ jobs:
           directory: ./packages
           flags: unittests
           fail_ci_if_error: false
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: dist-${{ matrix.node-version }}
-          path: dist/**
-
-      - name: Upload coverage artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: coverage-${{ matrix.node-version }}
-          path: coverage/**
