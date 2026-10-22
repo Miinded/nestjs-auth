@@ -23,7 +23,7 @@
     "typescript"
   ],
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "publishConfig": {
     "access": "public"
@@ -57,7 +57,6 @@
     "test:coverage": "node ../../config/run-jest.mjs coverage"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1"
   },
@@ -69,23 +68,25 @@
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@swc/core": "catalog:",
-    "@swc/jest": "catalog:",
     "@nestjs/common": "catalog:",
     "@nestjs/core": "catalog:",
     "@nestjs/jwt": "catalog:",
     "@nestjs/passport": "catalog:",
     "@nestjs/platform-express": "catalog:",
     "@nestjs/testing": "catalog:",
-    "@types/bcrypt": "^5.0.2",
+    "@swc/core": "catalog:",
+    "@swc/jest": "catalog:",
+    "@types/bcrypt": "catalog:",
     "@types/express": "catalog:",
     "@types/jest": "catalog:",
     "@types/node": "catalog:",
     "@types/passport": "^1.0.17",
     "@types/passport-jwt": "^4.0.1",
     "@types/passport-strategy": "^0.2.38",
+    "@types/supertest": "catalog:",
     "@typescript-eslint/eslint-plugin": "catalog:",
     "@typescript-eslint/parser": "catalog:",
+    "bcrypt": "^6.0.0",
     "eslint": "catalog:",
     "eslint-config-prettier": "catalog:",
     "jest": "catalog:",
@@ -93,7 +94,6 @@
     "rimraf": "catalog:",
     "rxjs": "catalog:",
     "supertest": "catalog:",
-    "@types/supertest": "catalog:",
     "ts-node": "catalog:",
     "typescript": "catalog:"
   }
